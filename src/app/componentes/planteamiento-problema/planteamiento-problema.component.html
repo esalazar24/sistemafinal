@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-4">{{ texto }}</h5>
+                    <h2 *ngIf="submitted && CrearplanteamientoProblema.invalid" class="h2">Verifica los Campos</h2>
+                    
+                    <form [formGroup]="CrearplanteamientoProblema" (ngSubmit)="agregarEditarplanteamientoProblema()">
+                       
+                        <div class="form-group">
+                            <label for="variableplanteamientoProblema">Planteamiento Del Problema</label>
+                            <textarea class="form-control" id="variableplanteamientoProblema" rows="3"
+                                formControlName="variableplanteamientoProblema"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button type="button" class="btn btn-secondary"
+                                routerLink="/ListarLaDescripcion">Volver</button>
+                            <button *ngIf="TablaDescripcionDelTema.length > 0" [disabled]="TablaDescripcionDelTema.length ===0" type="submit"   class="btn btn-primary">Agregar</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

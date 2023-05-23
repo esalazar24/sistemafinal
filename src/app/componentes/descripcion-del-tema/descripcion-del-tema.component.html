@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-4">{{ texto }}</h5>
+                    <h2 *ngIf="submitted && CreardescripcionDelTema.invalid" class="h2">Verifica los Campos</h2>
+                    
+                    <form [formGroup]="CreardescripcionDelTema" (ngSubmit)="agregarEditarDescripcion()">
+                       
+                        <div class="form-group">
+                            <label for="variabledescripcion">Descripción del tema</label>
+                            <textarea class="form-control" id="variabledescripcion" rows="3"
+                                formControlName="variabledescripcion"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button type="button" class="btn btn-secondary"
+                                routerLink="/ListarLaDescripcion">Volver</button>
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
